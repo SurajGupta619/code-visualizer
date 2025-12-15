@@ -1,0 +1,443 @@
+import React, { useState } from "react";
+import Navbar from "../../../components/HomeComponents/Navbar";
+import Hero from "../../../components/HomeComponents/Hero";
+import Footer from "../../../components/HomeComponents/Footer";
+import Card from "../../../components/HomeComponents/Card";
+import AuthPage from "../../LoginPage/LoginPage"; // import popup component
+import "./Home.css";
+import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
+import { LuBookOpen } from "react-icons/lu";
+
+function Home() {
+  const [showLogin, setShowLogin] = useState(false);
+
+  return (
+    <div className="h-screen w-[100%] flex flex-col bg-gray-900 text-blue-800 relative">
+      <Navbar onLoginClick={() => setShowLogin(true)} />
+      <Hero />
+
+      {/* Cards Section */}
+      <div className="flex justify-center mt-20 gap-12 px-4 flex-wrap">
+        <motion.div
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05 }}
+          className="card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+        >
+          <FaCode className="text-yellow-600 w-10 h-10" />
+          <Card
+            title="Interactive Code Visualizer"
+            description="Experiment with code and watch it transform into animated logic flows."
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05 }}
+          className="card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+        >
+          <LuBookOpen className="text-yellow-600 w-10 h-10" />
+          <Card
+            title="Learning Hub"
+            description="Explore tutorials, resources, and guides to master coding concepts."
+          />
+        </motion.div>
+      </div>
+      <Footer />
+      {/* Popup Overlay */}
+      {showLogin && (
+        <div className="fixed inset-0 bg-black bg-opacity-0 backdrop-blur-sm flex justify-center items-center z-">
+          <div className="relative  rounded-lg shadow-lg p-6 w-[90%] md:w-[60%] lg:w-[50%]">
+            <button
+              onClick={() => setShowLogin(false)}
+              className="absolute top-3 right-3 text-blue800 text-2xl font-bold"
+            >x
+            </button>
+            <AuthPage />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Home;
+// import React from "react";
+// import Navbar from "../../../components/HomeComponents/Navbar";
+// import Hero from "../../../components/HomeComponents/Hero";
+// import Footer from "../../../components/HomeComponents/Footer";
+// import Card from "../../../components/HomeComponents/Card";
+
+// import { motion } from "framer-motion";
+// import { FaCode } from "react-icons/fa";
+// import { LuBookOpen } from "react-icons/lu";
+
+// import "./Home.css"
+// import { useNavigate } from "react-router-dom";
+// function Home() {
+
+//   const navigate = useNavigate()
+//   return (
+//     <div className="h-screen w-[100%] flex flex-col bg-gray-900 text-white">
+
+//       <Navbar />
+//       <Hero />
+      
+//       {/* Cards Section */}
+//       <div className="flex justify-center mt-20 gap-12 px-4 flex-wrap">
+//         <motion.div 
+//           initial={{ opacity: 0, y: 500 }}
+//           animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+//           whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+          
+//           className="card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+//           onClick={() => {navigate("/visualizer");}}
+//         >
+//           <FaCode className="text-yellow-600 w-10 h-10" />
+//           <Card
+//             title="Interactive Code Visualizer"
+//             description="Experiment with code and watch it transform into animated logic flows."
+//           />
+//         </motion.div>
+//         <motion.div 
+//           initial={{ opacity: 0, y: 500 }}
+//           animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+//           whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+//           className=" card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+//           onClick={() => {navigate("/topics");}}
+//         >
+//           <LuBookOpen className="text-yellow-600 w-10 h-10" />
+//           <Card
+//           title="Learning Hub"
+//           description="Explore tutorials, resources, and guides to master coding concepts."
+//         />
+//         </motion.div>
+        
+      
+//       </div>
+      
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default Home;
+
+
+// ------------------------------------------------
+
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { useAuth } from "../../auth/AuthContext";
+// import { useNavigate } from "react-router-dom";
+
+// function Navbar({onLoginClick}) {
+//   const { isAuthenticated, logout } = useAuth();
+//   const navigate = useNavigate();
+//   // const userName = getUserName();
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: -20 }}
+//       animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+//     >
+//       <nav className="w-full py-2 px-10 flex justify-between items-center bg-gray-800/70 backdrop-blur-md fixed top-0 z-50">
+//         {/* Logo Section */}
+//         <motion.div
+//           initial={{ opacity: 0, x: 400 }}
+//           animate={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+//           className="flex items-center gap-2"
+//         >
+//           <div className="border-8 rounded-full border-blue-700 p-2"></div>
+//           <div className="text-2xl font-bold text-blue-400">CodeLens.</div>
+//         </motion.div>
+
+//         {/* Buttons Section */}
+//         <motion.div
+//           initial={{ opacity: 0, x: -500 }}
+//           animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+//           className="flex flex-row gap-2 items-center"
+//         >
+//           {isAuthenticated ? (
+//             <>
+//               {/* <motion.h1
+//                 whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+//                 className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+//               > */}
+//                 {/* {userName} */}
+//               {/* </motion.h1> */}
+//               <motion.button
+//                 whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+//                 className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+//                 onClick={logout}
+//               >
+//                 Logout
+//               </motion.button>
+//             </>
+//           ) : (
+//             <motion.button
+//               whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+//               className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+//               onClick={onLoginClick}
+//             >
+//               Login
+//             </motion.button>
+//           )}
+//         </motion.div>
+//       </nav>
+//     </motion.div>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+
+
+
+import React, { useContext } from "react";
+import Navbar from "../../../components/HomeComponents/Navbar";
+import Hero from "../../../components/HomeComponents/Hero";
+import Footer from "../../../components/HomeComponents/Footer";
+import Card from "../../../components/HomeComponents/Card";
+import LoginForm from "../../../components/LoginComponents/Login";
+import Register from "../../../components/LoginComponents/Register";
+import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
+import { LuBookOpen } from "react-icons/lu";
+import { AuthProvider, useAuth } from "../../../auth/AuthContext";
+import "./Home.css"
+import { useNavigate } from "react-router-dom";
+import Togle from "../../../components/LoginComponents/Togle";
+function Home() {
+  const {showAuthModal,closeAuthModal} = useAuth()
+  const navigate = useNavigate()
+  return (
+    <div className="h-screen w-[100%] flex flex-col bg-gray-900 text-white">
+
+      <Navbar />
+      <Hero />
+      
+      {/* Cards Section */}
+      <div className="flex justify-center mt-20 gap-12 px-4 flex-wrap">
+        <motion.div 
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+          
+          className="card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+          onClick={() => {navigate("/visualizer");}}
+        >
+          <FaCode className="text-yellow-600 w-10 h-10" />
+          <Card
+            title="Interactive Code Visualizer"
+            description="Experiment with code and watch it transform into animated logic flows."
+          />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+          className=" card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+          onClick={() => {navigate("/topics");}}
+        >
+          <LuBookOpen className="text-yellow-600 w-10 h-10" />
+          <Card
+          title="Learning Hub"
+          description="Explore tutorials, resources, and guides to master coding concepts."
+        />
+        </motion.div>
+        
+        {showAuthModal && (
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    {/* Background blur or dim overlay */}
+    <div 
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm" 
+      onClick={closeAuthModal}
+    ></div>
+
+    {/* Modal content */}
+    <div
+      className="relative bg-white rounded-xl shadow-lg w-[90%] sm:w-[450px] p-6 z-50"
+      onClick={(e) => e.stopPropagation()} // prevent closing on click inside
+    >
+      <button
+        onClick={closeAuthModal}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+      <LoginForm/>
+      <Register/>
+      <Togle/>
+
+    </div>
+  </div>
+)}
+      </div>
+      
+      <Footer />
+    </div>
+  );
+}
+
+export default Home;
+
+
+// import React, { useContext } from "react";
+import { motion } from "framer-motion";
+import { useAuth } from "../../auth/AuthContext";
+// import { useNavigate } from "react-router-dom";
+
+function Navbar() {
+  const { isAuthenticated, logout, userName,openAuthModal } = useAuth();
+  // const navigate = useNavigate();
+  // const userName = getUserName();
+  // const { openAuthModal } = useContext(useAuth);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+    >
+      <nav className="w-full py-2 px-10 flex justify-between items-center bg-gray-800/70 backdrop-blur-md fixed top-0 z-50">
+        {/* Logo Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 400 }}
+          animate={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+          className="flex items-center gap-2"
+        >
+          <div className="border-8 rounded-full border-blue-700 p-2"></div>
+          <div className="text-2xl font-bold text-blue-400">CodeLens.</div>
+        </motion.div>
+
+        {/* Buttons Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+          className="flex flex-row gap-2 items-center"
+        >
+          {isAuthenticated ? (
+            <>
+              <motion.h1
+                whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+                className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+              >
+                {userName}
+              </motion.h1>
+              <motion.button
+                whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+                className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+                onClick={logout}
+              >
+                Logout
+              </motion.button>
+            </>
+          ) : (
+            <motion.button
+              whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+              className="px-3 py-1 rounded-full border border-blue-300 hover:text-blue-400 hover:border-blue-600 hover:shadow-blue-700 hover:shadow-md"
+              // onClick={() => navigate("/login")}
+              onClick={openAuthModal}>
+            
+              Login
+            </motion.button>
+          )}
+        </motion.div>
+      </nav>
+    </motion.div>
+  );
+}
+
+export default Navbar;
+
+
+import React, { useContext } from "react";
+import Navbar from "../../../components/HomeComponents/Navbar";
+import Hero from "../../../components/HomeComponents/Hero";
+import Footer from "../../../components/HomeComponents/Footer";
+import Card from "../../../components/HomeComponents/Card";
+import LoginForm from "../../../components/LoginComponents/Login";
+import Register from "../../../components/LoginComponents/Register";
+import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
+import { LuBookOpen } from "react-icons/lu";
+import { AuthProvider, useAuth } from "../../../auth/AuthContext";
+import "./Home.css"
+import { useNavigate } from "react-router-dom";
+import Togle from "../../../components/LoginComponents/Togle";
+function Home() {
+  const {showAuthModal,closeAuthModal} = useAuth()
+  const navigate = useNavigate()
+  return (
+    <div className="h-screen w-[100%] flex flex-col bg-gray-900 text-white">
+
+      <Navbar />
+      <Hero />
+      
+      {/* Cards Section */}
+      <div className="flex justify-center mt-20 gap-12 px-4 flex-wrap">
+        <motion.div 
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+          
+          className="card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+          onClick={() => {navigate("/visualizer");}}
+        >
+          <FaCode className="text-yellow-600 w-10 h-10" />
+          <Card
+            title="Interactive Code Visualizer"
+            description="Experiment with code and watch it transform into animated logic flows."
+          />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 500 }}
+          animate={{ opacity: 1, y: 0 , transition: { duration: 0.6 } }}
+          whileHover={{ scale: 1.05, transition: { duration: 0 } }}
+          className=" card-container bg-gray-800 p-6 rounded-xl shadow-lg cursor-pointer w-80"
+          onClick={() => {navigate("/topics");}}
+        >
+          <LuBookOpen className="text-yellow-600 w-10 h-10" />
+          <Card
+          title="Learning Hub"
+          description="Explore tutorials, resources, and guides to master coding concepts."
+        />
+        </motion.div>
+        
+        {showAuthModal && (
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    {/* Background blur or dim overlay */}
+    <div 
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm" 
+      onClick={closeAuthModal}
+    ></div>
+
+    {/* Modal content */}
+    <div
+      className="relative bg-white rounded-xl shadow-lg w-[90%] sm:w-[450px] p-6 z-50"
+      onClick={(e) => e.stopPropagation()} // prevent closing on click inside
+    >
+      <button
+        onClick={closeAuthModal}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+      <LoginForm/>
+      <Register/>
+      <Togle/>
+
+    </div>
+  </div>
+)}
+      </div>
+      
+      <Footer />
+    </div>
+  );
+}
+
+export default Home;

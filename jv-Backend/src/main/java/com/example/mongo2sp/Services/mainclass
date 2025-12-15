@@ -1,0 +1,50 @@
+import com.github.javaparser.*;
+import com.github.javaparser.ast.*;
+import com.github.javaparser.ast.body.*;
+
+public class MainClassFinder {
+
+    public static String findMainClass(String code) {
+        // Parse the code
+        CompilationUnit cu = JavaParser.parse(code);
+
+        // Loop through all class/interface declarations
+        for (ClassOrInterfaceDeclaration cls : cu.findAll(ClassOrInterfaceDeclaration.class)) {
+
+            // Check all methods in each class
+            for (MethodDeclaration method : cls.getMethods()) {
+                if (isMainMethod(method)) {
+                    return cls.getNameAsString();
+                }
+            }
+        }
+        return null;
+    }
+
+    private static boolean isMainMethod(MethodDeclaration method) {
+        // Check if it’s "public static void main(String[] args)"
+        if (!method.getNameAsString().equals("main")) return false;
+        if (!method.isPublic() || !method.isStatic()) return false;
+        if (!method.getType().isVoidType()) return false;
+
+        if (method.getParameters().size() != 1) return false;
+        Parameter param = method.getParameter(0);
+        return param.getType().asString().matches("String\\[\\]\\s*\\w*");
+    }
+
+    public static void main(String[] args) {
+        String code = """
+            class A {
+                void display() {}
+            }
+            class B extends A {
+                public static void main(String[] args) {
+                    System.out.println("Hello");
+                }
+            }
+            """;
+w
+        String mainClass = findMainClass(code);
+        System.out.println("Main class: " + mainClass);
+    }
+}

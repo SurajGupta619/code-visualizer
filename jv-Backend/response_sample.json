@@ -1,0 +1,1840 @@
+{
+    "in": {
+      "code": "public class HammingNumber {\n    public static void main(String[] args) {\n        int num = 10;\n        boolean isHamming = true;\n\n        for (int i = 2; i <= num; i++) {\n            if (num % i == 0 && isPrime(i)) {\n                if (i != 2 && i != 3 && i != 5) {\n                    isHamming = false;\n                    break;\n                }\n            }\n        }\n\n        if (isHamming) {\n            System.out.println(num + \" is a Hamming number\");\n        } else {\n            System.out.println(num + \" is NOT a Hamming number\");\n        }\n    }\n\n    public static boolean isPrime(int n) {\n        if (n <= 1) return false;\n        for (int i = 2; i <= n / 2; i++) {\n            if (n % i == 0) return false;\n        }\n        return true;\n    }\n}",
+      "input": "10",
+      "breakLineNumbers": []
+    },
+    "out": [
+      {
+        "event": "call",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 1,
+        "lastLineNo": "0",
+        "nextLineNo": "2",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 2,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 2,
+        "lastLineNo": "2",
+        "nextLineNo": "3",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 3,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 3,
+        "lastLineNo": "3",
+        "nextLineNo": "4",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 4,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 4,
+        "lastLineNo": "4",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 5,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "call",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 6,
+        "lastLineNo": "0",
+        "nextLineNo": "22",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 22,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 7,
+        "lastLineNo": "22",
+        "nextLineNo": "23",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 23,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "2"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "return",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 8,
+        "lastLineNo": "27",
+        "nextLineNo": "27",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 23,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "2"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": [
+              "VALUE",
+              "true"
+            ]
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 9,
+        "lastLineNo": "7",
+        "nextLineNo": "8",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 8,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 10,
+        "lastLineNo": "8",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "3"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 11,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "3"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 12,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "4"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 13,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "4"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 14,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 15,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "call",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 16,
+        "lastLineNo": "0",
+        "nextLineNo": "22",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 22,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 17,
+        "lastLineNo": "22",
+        "nextLineNo": "23",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 23,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "5"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 18,
+        "lastLineNo": "23",
+        "nextLineNo": "24",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 24,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "5"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 19,
+        "lastLineNo": "24",
+        "nextLineNo": "25",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 25,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "5"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "return",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 20,
+        "lastLineNo": "27",
+        "nextLineNo": "27",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 25,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "5"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": [
+              "VALUE",
+              "true"
+            ]
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 21,
+        "lastLineNo": "7",
+        "nextLineNo": "8",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 8,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "5"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 22,
+        "lastLineNo": "8",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "6"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 23,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "6"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 24,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "7"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 25,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "7"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 26,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "8"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 27,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "8"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 28,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "9"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 29,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "9"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 30,
+        "lastLineNo": "7",
+        "nextLineNo": "6",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 6,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 31,
+        "lastLineNo": "6",
+        "nextLineNo": "7",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "call",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 32,
+        "lastLineNo": "0",
+        "nextLineNo": "22",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 22,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 33,
+        "lastLineNo": "22",
+        "nextLineNo": "23",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 23,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "10"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 34,
+        "lastLineNo": "23",
+        "nextLineNo": "24",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 24,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "10"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 35,
+        "lastLineNo": "24",
+        "nextLineNo": "25",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 25,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "10"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": null
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "return",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.isPrime()",
+        "stepNo": 36,
+        "lastLineNo": "25",
+        "nextLineNo": "25",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.isPrime",
+            "lineno": 25,
+            "className": "HammingNumber",
+            "locals": {
+              "param0": [
+                "VALUE",
+                "10"
+              ],
+              "i": [
+                "VALUE",
+                "2"
+              ]
+            },
+            "_return": [
+              "VALUE",
+              "false"
+            ]
+          },
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 7,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 37,
+        "lastLineNo": "7",
+        "nextLineNo": "15",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 15,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": ""
+      },
+      {
+        "event": "line",
+        "errorMessage": "",
+        "currentObjectName": "HammingNumber.main(java.lang.String[])",
+        "stepNo": 38,
+        "lastLineNo": "15",
+        "nextLineNo": "16",
+        "frameList": [
+          {
+            "objectName": "HammingNumber.main",
+            "lineno": 16,
+            "className": "HammingNumber",
+            "locals": {
+              "args": [
+                "REF",
+                "0"
+              ],
+              "num": [
+                "VALUE",
+                "10"
+              ],
+              "isHamming": [
+                "VALUE",
+                "true"
+              ],
+              "i": [
+                "VALUE",
+                "10"
+              ]
+            },
+            "_return": null
+          }
+        ],
+        "heap": {
+          "0": {
+            "type": "ARRAY",
+            "length": 0,
+            "elements": [],
+            "fields": null
+          }
+        },
+        "printedString": "10 is a Hamming number\n"
+      }
+    ]
+  }

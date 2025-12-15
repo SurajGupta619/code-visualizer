@@ -1,0 +1,42 @@
+.card-container{
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate3{
+    0% {
+        right: -100%;
+    }
+    50%,
+    100%{
+        right: 100%;
+    }
+}
+
+.card-container:hover {
+    background: #0c4f53;
+    color: #050801;
+    box-shadow: 0 0 5px #0f6d72, 0 0 10px #03e9f4, 0 0 5px rgb(31, 202, 211), 0 0 2px #03e9f4;
+    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); */
+    
+}
+
+
+.typewriter {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.5s step-end infinite alternate;
+   }
+   /* Use JS calculated width */
+   @keyframes typing {
+    from { width: 0; }
+    to { width: var(--text-width); }
+   }
+   @keyframes blink {
+    50% { border-color: transparent; }
+   }
